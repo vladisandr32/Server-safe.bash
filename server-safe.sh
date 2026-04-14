@@ -92,7 +92,7 @@ echo -e "\n${YELLOW}[2/7] Создание пользователя ${USERNAME}.
 if id "$USERNAME" &>/dev/null; then
     echo -e "${GREEN}Пользователь ${USERNAME} уже существует${NC}"
 else
-    adduser --gecos "" $USERNAME
+    adduser --gecos "" $USERNAME --allow-bad-names
     usermod -aG sudo $USERNAME
     echo -e "${GREEN}Пользователь ${USERNAME} создан${NC}"
 fi
